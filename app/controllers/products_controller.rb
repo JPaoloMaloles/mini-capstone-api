@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  def showfirst
-    @product = Product.first
+  def showany
+    @product = Product.find_by(id: params["id"])
     render template: "products/show"
   end
 
