@@ -1,6 +1,6 @@
 require "http"
 require "tty-table"
-api_data = HTTP.get("http://localhost:3000/showall.json")
+api_data = HTTP.get("http://localhost:3000/products.json")
 products_hash = api_data.parse(:json)
 
 table = TTY::Table.new(["ID", "name", "price", "Description"], [])
