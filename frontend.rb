@@ -16,3 +16,5 @@ products_hash.each do |product|
 end
 
 puts table
+
+#Bonus: Make a Ruby script to test the index and show actions using the HTTP gem
