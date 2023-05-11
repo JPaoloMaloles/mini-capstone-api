@@ -12,12 +12,12 @@ input_image_url = gets.chomp
 puts "please input a description:"
 input_description = gets.chomp
 
-# response = HTTP.post("http://localhost:3000/products.json", :body =>
-#   name: input_name,
-#   price: input_price,
-#   image_url: input_image_url,
-#   description: input_description
-# )
+# response = HTTP.post("http://localhost:3000/products.json", :body => { name: input_name,
+#                                                                        price: input_price,
+#                                                                        image_url: input_image_url,
+#                                                                        description: input_description })
+
+#Bonus: In your frontend Ruby script, add an update option.
 api_data = HTTP.get("http://localhost:3000/products.json")
 products_hash = api_data.parse(:json)
 
