@@ -2,7 +2,22 @@
 #Bonus: In your Ruby frontend script, use the tty-table gem (https://github.com/piotrmurach/tty-table) to print out the results with tables in the terminal!
 require "http"
 require "tty-table"
-response = HTTP.post("http://localhost:3000/products.json")
+puts "we are going to add a new product!"
+puts "please input a name:"
+input_name = gets.chomp
+puts "please input a price:"
+input_price = gets.chomp.to_i
+puts "please input an image url:"
+input_image_url = gets.chomp
+puts "please input a description:"
+input_description = gets.chomp
+
+# response = HTTP.post("http://localhost:3000/products.json", :body =>
+#   name: input_name,
+#   price: input_price,
+#   image_url: input_image_url,
+#   description: input_description
+# )
 api_data = HTTP.get("http://localhost:3000/products.json")
 products_hash = api_data.parse(:json)
 
