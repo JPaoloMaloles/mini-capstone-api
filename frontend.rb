@@ -21,6 +21,7 @@ response = HTTP.post("http://localhost:3000/products.json", :form => { name: inp
                                                                        image_url: input_image_url,
                                                                        description: input_description })
 #--------------------------------------------------------------------------------------------------------------------- Read
+#get, photos/:id
 #Can probably edit it so you dont have to do it Get
 api_data = HTTP.get("http://localhost:3000/products.json")
 products_hash = api_data.parse(:json)
@@ -48,8 +49,9 @@ end
 puts table.render(:ascii)
 
 #--------------------------------------------------------------------------------------------------------------------- Update
-
-#--------------------------------------------------------------------------------------------------------------------- Destroy
+#patch, products/:id
+#--------------------------------------------------------------------------------------------------------------------- Delete
+#delete, photos/:id
 #--------------------------------------------------------------------------------------------------------------------- Bonus
 
 #Bonus: Make a Ruby frontend script using the HTTP gem to display the results in the terminal instead of a web browser!
