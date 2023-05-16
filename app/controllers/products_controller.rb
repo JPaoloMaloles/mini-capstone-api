@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
     if @product.valid?
       render :show
     else
-      render json: { errors: @product.errors.full_messages }, status: :unprocessible_entity
+      render json: { errors: @product.errors.full_messages }, status: 422
     end
   end
 
@@ -36,7 +36,7 @@ class ProductsController < ApplicationController
     if @product.valid?
       render :show
     else
-      render json: { errors: @product.errors.full_messages }, status: :unprocessible_entity
+      render json: { errors: @product.errors.full_messages }, status: 422
     end
   end
 
