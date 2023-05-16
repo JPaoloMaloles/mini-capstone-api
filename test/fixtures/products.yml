@@ -13,7 +13,7 @@ two:
   description: MyString
 
 three:
-  name: "ya"
+  name: ""
   price: 12.50
   image_url: image_2.png
   description: testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
