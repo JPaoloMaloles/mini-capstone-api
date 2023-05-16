@@ -11,3 +11,9 @@ two:
   price: 1
   image_url: MyString
   description: MyString
+
+three:
+  name: "ya"
+  price: 12.50
+  image_url: image_2.png
+  description: testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
