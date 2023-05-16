@@ -1,5 +1,14 @@
 class Product < ApplicationRecord
   #   Create a model method called is_discounted? that returns true if an item is less than or equal to $10 and false otherwise.
+  validates :name, presence: true
+  validates :name, uniqueness: true
+  validates :price, presence: true
+  validates :price, numericality: true
+  validates :price, comparison: { greater_than: 0 }
+  validates :description, presence: true
+  validates :description, length: { in: 10..500 }
+  validates :image_url, :with => "%r{\.(gif|jpg|png)\Z}i", :message => "must be gif, png, or jpeg", multiline: true
+
   def is_discounted?
     return price <= 10
   end
