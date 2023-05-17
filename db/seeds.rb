@@ -31,8 +31,11 @@ product3.save
 image1 = Image.new(url: "https://cdn.media.amplience.net/i/partycity/C909620_red?$large$&fmt=auto&qlt=default", product_id: product1.id)
 image1.save
 
-image2 = Image.new(url: "https://weareticonderoga.com/wp-content/uploads/2019/06/13308_GLAMOUR_2000X2000.png", product_id: product1.id)
+image2 = Image.new(url: "https://www.freeiconspng.com/thumbs/pencil-png/black-pencil-png-black-pencil-vector-8.png", product_id: product1.id)
 image2.save
 
 image3 = Image.new(url: "https://www.tvguide.com/a/img/catalog/provider/1/1/1-3988714139.jpg", product_id: product2.id)
 image3.save
+
+image4 = Image.new(url: "https://www.tvguide.com/a/img/catalog/provider/1/1/1-3988714139.jpg", product_id: product3.id)
+image4.save
