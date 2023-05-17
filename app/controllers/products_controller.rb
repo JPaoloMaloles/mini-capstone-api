@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
       price: params["price"],
       image_url: params["image_url"],
       description: params["description"],
+      supplier_id: params["supplier_id"],
     )
 
     if @product.valid?
@@ -31,6 +32,7 @@ class ProductsController < ApplicationController
       price: params["price"] || @product.price,
       image_url: params["image_url"] || @product.image_url,
       description: params["description"] || @product.description,
+      supplier_id: params["supplier_id"] || @product.supplier_id,
     )
 
     if @product.valid?
