@@ -22,4 +22,9 @@ class Product < ApplicationRecord
   def total
     return price + tax()
   end
+
+  def supplier
+    # Supplier.where(id: supplier_id)
+    return Supplier.where(id: supplier_id)
+  end
 end
