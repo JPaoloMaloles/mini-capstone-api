@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 supplier1 = Supplier.new(name: "Best Goods", email: "bestgoods@gmail.com", phone_number: "1-111-111-1111")
-supplier.save
+supplier1.save
 
 supplier2 = Supplier.new(name: "Worst Goods", email: "worstgoods@gmail.com", phone_number: "2-222-222-2222")
-supplier.save
+supplier2.save
 #-----------------------------------
 product = Product.new(name: "Balloon", price: 9, image_url: "https://cdn.media.amplience.net/i/partycity/C909620_red?$large$&fmt=auto&qlt=default", description: "Helium contained within plastic", inventory: 4, supplier_id: supplier1.id)
 product.save
