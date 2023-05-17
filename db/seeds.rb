@@ -13,3 +13,9 @@ product.save
 
 product = Product.new(name: "Magic Schoolbus", price: 1, image_url: "https://www.tvguide.com/a/img/catalog/provider/1/1/1-3988714139.jpg", description: "Magic contained within bus")
 product.save
+
+supplier = Supplier.new(name: "Best Goods", email: "bestgoods@gmail.com", phone_number: "1-111-111-1111")
+supplier.save
+
+supplier = Supplier.new(name: "Worst Goods", email: "worstgoods@gmail.com", phone_number: "2-222-222-2222")
+supplier.save
