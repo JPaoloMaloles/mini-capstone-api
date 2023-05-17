@@ -27,14 +27,13 @@ product3.save
 # product.create!({
 
 # })
-
 image1 = Image.new(url: "https://cdn.media.amplience.net/i/partycity/C909620_red?$large$&fmt=auto&qlt=default", product_id: product1.id)
 image1.save
 
-image2 = Image.new(url: "https://www.freeiconspng.com/thumbs/pencil-png/black-pencil-png-black-pencil-vector-8.png", product_id: product1.id)
+image2 = Image.new(url: "https://www.tvguide.com/a/img/catalog/provider/1/1/1-3988714139.jpg", product_id: product1.id)
 image2.save
 
-image3 = Image.new(url: "https://www.tvguide.com/a/img/catalog/provider/1/1/1-3988714139.jpg", product_id: product2.id)
+image3 = Image.new(url: "https://img.freepik.com/free-vector/writting-pencil-design_1095-187.jpg", product_id: product2.id)
 image3.save
 
 image4 = Image.new(url: "https://www.tvguide.com/a/img/catalog/provider/1/1/1-3988714139.jpg", product_id: product3.id)
