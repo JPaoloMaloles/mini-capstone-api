@@ -9,4 +9,10 @@ Rails.application.routes.draw do
   post "/products", controller: "products", action: "create"
   patch "/products/:id", controller: "products", action: "update"
   delete "/products/:id", controller: "products", action: "delete"
+
+  get "/supplier/:id", controller: "suppliers", action: "show"
+  get "/suppliers", controller: "suppliers", action: "index"
+  post "/suppliers", controller: "suppliers", action: "create"
+  patch "/suppliers/:id", controller: "suppliers", action: "update"
+  delete "/suppliers/:id", controller: "suppliers", action: "delete"
 end
