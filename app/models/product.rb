@@ -27,4 +27,8 @@ class Product < ApplicationRecord
     # Supplier.where(id: supplier_id)
     return Supplier.where(id: supplier_id)
   end
+
+  def images
+    return Image.where(product_id: id)
+  end
 end
