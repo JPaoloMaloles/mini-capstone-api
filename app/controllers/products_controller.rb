@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
       price: params["price"] || @product.price,
       #image_url: params["image_url"] || @product.image_url,
       description: params["description"] || @product.description,
-      inventory: params["inventory"] || @prodyct.inventory,
+      inventory: params["inventory"] || @product.inventory,
       supplier_id: params["supplier_id"] || @product.supplier_id,
     )
 
