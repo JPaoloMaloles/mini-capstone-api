@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   #   Create a model method called is_discounted? that returns true if an item is less than or equal to $10 and false otherwise.
+  belongs_to :supplier
   validates :name, presence: true
   validates :name, uniqueness: true
   validates :price, presence: true
@@ -23,10 +24,10 @@ class Product < ApplicationRecord
     return price + tax()
   end
 
-  def supplier
-    # Supplier.where(id: supplier_id)
-    return Supplier.where(id: supplier_id)
-  end
+  # def supplier
+  #   # Supplier.where(id: supplier_id)
+  #   return Supplier.where(id: supplier_id)
+  # end
 
   def images
     return Image.where(product_id: id)

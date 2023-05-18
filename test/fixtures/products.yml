@@ -5,15 +5,18 @@ one:
   price: 1
 # image_url: MyString
   description: MyString
+  supplier: one
 
 two:
   name: MyString
   price: 1
 # image_url: MyString
   description: MyString
+  supplier: one
 
 three:
   name: ""
   price: 12.50
 # image_url: image_2.png
   description: testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+  supplier: one
