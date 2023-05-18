@@ -17,7 +17,6 @@ class ProductsController < ApplicationController
       description: params["description"],
       inventory: params["inventory"],
       supplier_id: params["supplier_id"],
-      #supplier: Supplier.find_by["supplier_id"],
     )
 
     if @product.valid?
@@ -36,7 +35,6 @@ class ProductsController < ApplicationController
       description: params["description"] || @product.description,
       inventory: params["inventory"] || @product.inventory,
       supplier_id: params["supplier_id"] || @product.supplier_id,
-      #supplier: Supplier.id || @product.supplier,
     )
 
     if @product.valid?

@@ -6,9 +6,8 @@ class ImagesController < ApplicationController
 
   def index
     @images = Image.all
-    render :index  
+    render :index
   end
-
 
   def create
     @image = Image.create(
@@ -29,6 +28,6 @@ class ImagesController < ApplicationController
   def destroy
     image = Image.find_by(id: params["id"])
     image.destroy
-    render json: ( message: "Destroyed the image")
+    render json: { message: "Destroyed the image" }
   end
 end
