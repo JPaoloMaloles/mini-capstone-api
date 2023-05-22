@@ -1,22 +1,32 @@
 class OrdersController < ApplicationController
   def show
     @order = Order.find_by(id: params["id"])
-    render :show
+    if current_user
+      render :show
+    else
+      render json: { message: "Invalid User" }
+    end
   end
 
   def index
     @orders = Order.all
-    render :index
+    if current_user
+      render :index
+    else
+      render json: { message: "Invalid User" }
+    end
   end
 
   def create
+    @product = Product.find_by(id: params["product_id"])
+    # puts "THIS IS THE product: #{pro}"
     @order = Order.create(
-      quantity: params["quantity"],
-      subtotal: params["subtotal"],
-      tax: params["tax"],
-      total: params["total"],
-      product_id: 1,
       user_id: current_user.id,
+      product_id: params["product_id"],
+      quantity: params["quantity"],
+      subtotal: @product.price,
+      tax: @product.tax,
+      total: @product.total,
     )
     render :show
   end
