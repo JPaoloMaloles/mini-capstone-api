@@ -18,6 +18,24 @@ supplier = Supplier.create!(name: "Worst Goods", email: "worstgoods@gmail.com", 
 product = Product.create!(name: "Magic Schoolbus", price: 1, description: "Magic contained within bus", inventory: 6, supplier_id: supplier.id)
 image = Image.create!(url: "https://www.tvguide.com/a/img/catalog/provider/1/1/1-3988714139.jpg", product_id: product.id)
 
+user = User.create!(name: "name", email: "email@gmail.com", password: "password", password_confirmation: "password")
+# user = User.new(name: "name", email: "email@gmail.com", password_digest: "password")
+# t.string "name"
+# t.string "email"
+# t.string "password_digest"
+# t.datetime "created_at", null: false
+# t.datetime "updated_at", null: false
+order = Order.create!(user_id: user.id, product_id: product.id, quantity: 3, subtotal: 1, tax: 2, total: 3)
+
+# t.integer "user_id"
+# t.integer "product_id"
+# t.integer "quantity"
+# t.decimal "subtotal", precision: 9, scale: 2
+# t.decimal "tax", precision: 9, scale: 2
+# t.decimal "total", precision: 9, scale: 2
+# t.datetime "created_at", null: false
+# t.datetime "updated_at", null: false
+
 # #--------------------------------------------------------------------------------------------------------------------
 # supplier1 = Supplier.new(name: "Best Goods", email: "bestgoods@gmail.com", phone_number: "1-111-111-1111")
 # supplier1.save
