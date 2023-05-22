@@ -25,4 +25,5 @@ Rails.application.routes.draw do
   post "/users", controller: "users", action: "create"
   # post "/users" => "users#create"
   post "/sessions", controller: "sessions", action: "create"
+  get "/sessions", controller: "sessions", action: "current_user"
 end

@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   def show
+    puts "--------- User: ------------"
+    pp current_user
     @product = Product.find_by(id: params["id"])
     render :show
   end
