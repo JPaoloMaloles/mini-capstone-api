@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
     if current_user
       render :show
     else
-      render json: { message: "Invalid User" }
+      render json: [], status: :unauthorized
     end
   end
 
@@ -13,22 +13,26 @@ class OrdersController < ApplicationController
     if current_user
       render :index
     else
-      render json: { message: "Invalid User" }
+      render json: [], status: :unauthorized
     end
   end
 
   def create
-    @product = Product.find_by(id: params["product_id"])
-    quantity = params["quantity"].to_i
-    # puts "THIS IS THE product: #{pro}"
-    @order = Order.create(
-      user_id: current_user.id,
-      product_id: params["product_id"],
-      quantity: params["quantity"],
-      subtotal: @product.price * quantity,
-      tax: @product.tax * quantity,
-      total: @product.total * quantity,
-    )
-    render :show
+    if current_user
+      @product = Product.find_by(id: params["product_id"])
+      quantity = params["quantity"].to_i
+      # puts "THIS IS THE product: #{pro}"
+      @order = Order.create(
+        user_id: current_user.id,
+        product_id: params["product_id"],
+        quantity: params["quantity"],
+        subtotal: @product.price * quantity,
+        tax: @product.tax * quantity,
+        total: @product.total * quantity,
+      )
+      render :show
+    else
+      render json: [], status: :unauthorized
+    end
   end
 end
