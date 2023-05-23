@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+
   def show
     puts "--------- User: ------------"
     pp current_user
