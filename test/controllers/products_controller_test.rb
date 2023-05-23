@@ -36,6 +36,9 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
     post "/products.json", params: {}, headers: { "Authorization" => "Bearer #{@jwt}" }
     assert_response 422
+
+    # post "/products.json", params: {}
+    # assert_response 401
   end
 
   test "update" do
@@ -48,6 +51,9 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
     patch "/products/#{product.id}.json", params: { name: "" }, headers: { "Authorization" => "Bearer #{@jwt}" }
     assert_response 422
+
+    # patch "/products/#{product.id}.json", params: { name: "" }
+    # assert_response 401
   end
 
   test "delete" do
@@ -55,5 +61,8 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       delete "/products/#{Product.first.id}.json", headers: { "Authorization" => "Bearer #{@jwt}" }
       assert_response 200
     end
+
+    # delete "/products/#{Product.first.id}.json"
+    # assert_response 401
   end
 end
