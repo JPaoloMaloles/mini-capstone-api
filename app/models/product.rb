@@ -1,5 +1,7 @@
 class Product < ApplicationRecord
   #   Create a model method called is_discounted? that returns true if an item is less than or equal to $10 and false otherwise.
+  has_many :category_products
+  # has_many :categories, through :category_products
   has_many :orders
   belongs_to :supplier
   validates :name, presence: true

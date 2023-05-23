@@ -55,3 +55,9 @@ order = Order.create!(user_id: user.id, product_id: product.id, quantity: 3, sub
 
 # image4 = Image.new(url: "https://www.tvguide.com/a/img/catalog/provider/1/1/1-3988714139.jpg", product_id: product3.id)
 # image4.save
+
+category = Category.create(name: "Home")
+category = Category.create(name: "Outdoors")
+category = Category.create(name: "Vacation")
+category_product = CategoryProduct.create(category_id: 1, product_id: 1)
+category_product = CategoryProduct.create(category_id: 2, product_id: 2)
