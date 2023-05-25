@@ -19,4 +19,10 @@ class CartedProductsController < ApplicationController
     )
     render :show
   end
+
+  def destroy
+    carted_product = CartedProduct.find_by(id: params["id"])
+    carted_product.update(status: "removed")
+    render json: { message: "carted_product was removed from shopping cart" }
+  end
 end
