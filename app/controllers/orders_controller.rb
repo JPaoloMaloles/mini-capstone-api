@@ -19,8 +19,8 @@ class OrdersController < ApplicationController
 
   def create
     if current_user
-      @carted_product = CartedProduct.where(user_id: current_user, status: "carted")
-      # puts "THIS IS THE product: #{pro}"
+      #@carted_product = CartedProduct.where(user_id: current_user, status: "carted")
+      @carted_product = current_user.carted_products.where(status: "carted")
       subtotal = 0
       tax = 0
       total = 0
