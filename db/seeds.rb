@@ -20,7 +20,15 @@ image = Image.create!(url: "https://www.tvguide.com/a/img/catalog/provider/1/1/1
 
 user = User.create!(name: "name", email: "email@gmail.com", password: "password", password_confirmation: "password")
 
-order = Order.create!(user_id: user.id, product_id: product.id, quantity: 3, subtotal: 3, tax: 1, total: 4)
+carted_product = CartedProduct.create!(user_id: user.id, product_id: product.id, quantity: 1, status: "Purchased")
+
+order = Order.create!(user_id: user.id, subtotal: 3, tax: 1, total: 4)
+
+# t.integer "user_id"
+# t.integer "product_id"
+# t.integer "quantity"
+# t.string "status"
+# t.integer "order_id"
 
 # #--------------------------------------------------------------------------------------------------------------------
 # supplier1 = Supplier.new(name: "Best Goods", email: "bestgoods@gmail.com", phone_number: "1-111-111-1111")
@@ -55,7 +63,7 @@ order = Order.create!(user_id: user.id, product_id: product.id, quantity: 3, sub
 
 # image4 = Image.new(url: "https://www.tvguide.com/a/img/catalog/provider/1/1/1-3988714139.jpg", product_id: product3.id)
 # image4.save
-
+# #--------------------------------------------------------------------------------------------------------------------
 category = Category.create(name: "Home")
 category = Category.create(name: "Outdoors")
 category = Category.create(name: "Vacation")
