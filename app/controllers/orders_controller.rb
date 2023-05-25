@@ -24,11 +24,11 @@ class OrdersController < ApplicationController
       # puts "THIS IS THE product: #{pro}"
       @order = Order.create(
         user_id: current_user.id,
-        product_id: params["product_id"],
-        quantity: params["quantity"],
-        subtotal: @product.price * quantity,
-        tax: @product.tax * quantity,
-        total: @product.total * quantity,
+        #product_id: params["product_id"],
+        #quantity: params["quantity"],
+        # subtotal: @product.price * quantity,
+        # tax: @product.tax * quantity,
+        # total: @product.total * quantity,
       )
       render :show
     else
