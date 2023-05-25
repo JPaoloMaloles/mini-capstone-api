@@ -32,4 +32,8 @@ Rails.application.routes.draw do
   post "/orders", controller: "orders", action: "create"
   # patch "/orders/:id", controller: "orders", action: "update"
   # delete "/orders/:id", controller: "orders", action: "delete"
+
+  get "/carted_products/:id", controller: "carted_products", action: "show"
+  get "/carted_products", controller: "carted_products", action: "index"
+  post "/carted_products", controller: "carted_products", action: "create"
 end
