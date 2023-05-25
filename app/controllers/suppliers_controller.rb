@@ -38,7 +38,7 @@ class SuppliersController < ApplicationController
     # end
   end
 
-  def delete
+  def destroy
     supplier = Supplier.find_by(id: params["id"])
     supplier.destroy
     render json: { message: "Supplier successfully deleted" }

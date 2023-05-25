@@ -8,22 +8,21 @@ Rails.application.routes.draw do
   get "/products", controller: "products", action: "index"
   post "/products", controller: "products", action: "create"
   patch "/products/:id", controller: "products", action: "update"
-  delete "/products/:id", controller: "products", action: "delete"
+  delete "/products/:id", controller: "products", action: "destroy"
 
   get "/suppliers/:id", controller: "suppliers", action: "show"
   get "/suppliers", controller: "suppliers", action: "index"
   post "/suppliers", controller: "suppliers", action: "create"
   patch "/suppliers/:id", controller: "suppliers", action: "update"
-  delete "/suppliers/:id", controller: "suppliers", action: "delete"
+  delete "/suppliers/:id", controller: "suppliers", action: "destroy"
 
   get "/images/:id", controller: "images", action: "show"
   get "/images", controller: "images", action: "index"
   post "/images", controller: "images", action: "create"
   patch "/images/:id", controller: "images", action: "update"
-  delete "/images/:id", controller: "images", action: "delete"
+  delete "/images/:id", controller: "images", action: "destroy"
 
   post "/users", controller: "users", action: "create"
-  # post "/users" => "users#create"
   post "/sessions", controller: "sessions", action: "create"
   get "/sessions", controller: "sessions", action: "current_user"
 
