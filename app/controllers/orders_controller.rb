@@ -20,14 +20,14 @@ class OrdersController < ApplicationController
   def create
     if current_user
       #@carted_product = CartedProduct.where(user_id: current_user, status: "carted")
-      @carted_product = current_user.carted_products.where(status: "carted")
+      @carted_products = current_user.carted_products.where(status: "carted")
       subtotal = 0
       tax = 0
       total = 0
-      @carted_product.each do |carted_product|
-        quantity = carted_product.quantity
-        carted_product.update(status: "purchased")
-        product = Product.find_by(id: carted_product.product_id)
+      @carted_products.each do |carted_products|
+        quantity = carted_products.quantity
+        carted_products.update(status: "purchased")
+        product = Product.find_by(id: carted_products.product_id)
         subtotal = subtotal + product.price * quantity
         tax = tax + product.tax * quantity
         total = total + product.total * quantity
@@ -39,6 +39,7 @@ class OrdersController < ApplicationController
         tax: tax,
         total: total,
       )
+      @carted_products.update(status: "purchased", order_id: @order.id)
       render :show
     else
       render json: [], status: :unauthorized
