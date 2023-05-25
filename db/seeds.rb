@@ -24,12 +24,6 @@ carted_product = CartedProduct.create!(user_id: user.id, product_id: product.id,
 
 order = Order.create!(user_id: user.id, subtotal: 3, tax: 1, total: 4)
 
-# t.integer "user_id"
-# t.integer "product_id"
-# t.integer "quantity"
-# t.string "status"
-# t.integer "order_id"
-
 # #--------------------------------------------------------------------------------------------------------------------
 # supplier1 = Supplier.new(name: "Best Goods", email: "bestgoods@gmail.com", phone_number: "1-111-111-1111")
 # supplier1.save
