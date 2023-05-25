@@ -24,9 +24,10 @@ class OrdersController < ApplicationController
       subtotal = 0
       tax = 0
       total = 0
-      @carted_product.each do |order|
-        quantity = order.quantity
-        product = Product.find_by(id: order.product_id)
+      @carted_product.each do |carted_product|
+        quantity = carted_product.quantity
+        carted_product.update(status: "purchased")
+        product = Product.find_by(id: carted_product.product_id)
         subtotal = subtotal + product.price * quantity
         tax = tax + product.tax * quantity
         total = total + product.total * quantity
@@ -34,16 +35,9 @@ class OrdersController < ApplicationController
       end
       @order = Order.create(
         user_id: current_user.id,
-        # product_id: order.product_id,
-        # quantity: quantity,
         subtotal: subtotal,
         tax: tax,
         total: total,
-        #product_id: params["product_id"],
-        #quantity: params["quantity"],
-        # subtotal: @product.price * quantity,
-        # tax: @product.tax * quantity,
-        # total: @product.total * quantity,
       )
       render :show
     else
