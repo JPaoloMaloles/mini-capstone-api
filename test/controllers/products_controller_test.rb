@@ -6,7 +6,13 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   # end
   setup do
     @user = User.create(name: "Test", email: "test@test.com", password: "password", admin: true)
-    @order = Order.create(user_id: @user.id, product_id: Product.first.id, quantity: 10)
+    @order = Order.create(user_id: @user.id, subtotal: 10, tax: 1, total: 11) #change this later (?)
+    # t.integer "user_id"
+    # t.decimal "subtotal", precision: 9, scale: 2
+    # t.decimal "tax", precision: 9, scale: 2
+    # t.decimal "total", precision: 9, scale: 2
+    # t.datetime "created_at", null: false
+    # t.datetime "updated_at", null: false
     post "/sessions.json", params: { email: "test@test.com", password: "password" }
     data = JSON.parse(response.body)
     @jwt = data["jwt"]
